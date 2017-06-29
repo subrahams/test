@@ -1,4 +1,4 @@
-# SITA_TEST_TASK
+# TASK_USING_SPRING_INTEGRATION
 
 ## Task Detail: 
 There are number of files placed into the directory (C:\SITA_TEST_TASK\IN) with a number on each line.
