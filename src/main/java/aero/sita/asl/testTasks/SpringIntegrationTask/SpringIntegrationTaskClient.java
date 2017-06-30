@@ -24,30 +24,37 @@ public class SpringIntegrationTaskClient {
     /**
      * Logger.
      */
-    private static final Logger LOGGER = Logger.getLogger(SpringIntegrationTaskClient.class);
+    private static final Logger LOGGER =
+        Logger.getLogger(SpringIntegrationTaskClient.class);
     /**
      * context.
      */
-    private static String configFile = "springIntegrationTask-applicationContext.xml";
-    
+    private static String configFile =
+        "springIntegrationTask-applicationContext.xml";
     /**
      * private constructor.
      */
-    public SpringIntegrationTaskClient(){
-        
+    public SpringIntegrationTaskClient() {
+
     }
-    
+    /**
+     * getConfigFile.
+     * @return configFile , never null
+     */
     public static String getConfigFile() {
         return configFile;
     }
-
+/**
+ * setConfigFile.
+ * @param configFile , not null
+ */
     public static void setConfigFile(final String configFile) {
         SpringIntegrationTaskClient.configFile = configFile;
     }
 
     /**
      * Main method to launch the spring integration example application.
-     * @param args
+     * @param args , not null
      */
     public static void main(String[] args)
     {
@@ -65,8 +72,7 @@ public class SpringIntegrationTaskClient {
         } catch (InterruptedException e) {
             LOGGER.error("Error occured while processing files : " + e);
         }
-        
-        if(context != null) {
+        if (context != null) {
             context.close();
         }
     }

@@ -34,8 +34,8 @@
 	
 	<!-- routing files as per business requirement. if valid file and need to be processed to sum all the numbers
 	 otherwise need to push all invalid files in  ERROR folder-->	
-	<bean id="router" class="aero.sita.asl.tasks.routers.InputFileRouter"/>
-    <int:router input-channel="filesOutputChannel" ref="router" method="handleFile"/>
+	<bean id="router" class="aero.sita.asl.tasks.routers.ChannelFileRouter"/>
+    <int:router input-channel="filesOutputChannel" ref="router" method="handleRouting"/>
     <!-- end of routing -->
     
     <!-- processing all valid files and doing sum of numbers in file and saving file in out folder with output extension -->
@@ -49,9 +49,9 @@
 	<file:outbound-channel-adapter id="outFileChannel"
         directory="${APP.DIRECTORY}\\OUT" auto-create-directory="true" filename-generator="outFileNameGenerator"/>
         
-    <bean id="processedFileNameGenerator" class="aero.sita.asl.tasks.processers.ProcessedFileNameGenerator"/>
+    <bean id="processedFileGenerator" class="aero.sita.asl.tasks.processers.ProcessedFileGenerator"/>
 	<file:outbound-channel-adapter id="processedFileChannel"
-        directory="${APP.DIRECTORY}\\PROCESSED" auto-create-directory="true" filename-generator="processedFileNameGenerator"/>
+        directory="${APP.DIRECTORY}\\PROCESSED" auto-create-directory="true" filename-generator="processedFileGenerator"/>
 	<!-- end of processing all valid file -->        
     
      <file:outbound-channel-adapter id="invalidChannel"  directory="${APP.DIRECTORY}\\ERROR" auto-create-directory="true" />

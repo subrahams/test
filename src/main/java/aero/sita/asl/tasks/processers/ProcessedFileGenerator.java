@@ -8,18 +8,18 @@ import org.springframework.messaging.Message;
  * @author Subraham
  *
  */
-public class OutFileNameGenerator implements FileNameGenerator {
+public class ProcessedFileGenerator implements FileNameGenerator {
 
     /**
      * Method to update the filename by FileWritingMessageHandler.
      * @param message , not null
      * @return fileName , never null
      */
-    public String generateFileName(Message<?> message) {
+    public String generateFileName(Message<?> message) {     
         String fileNameWithExt = message.getHeaders().
         get("file_name").toString();
         String fileName = fileNameWithExt.
-        replaceFirst(".txt", "") + ".OUT";
+        replaceFirst(".txt", "") + ".PROCESSED";
         return fileName;
     }
 }
