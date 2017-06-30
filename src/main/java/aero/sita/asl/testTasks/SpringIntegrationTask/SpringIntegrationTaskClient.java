@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Client class to inject spring configurations and to manage the flow.
- * @author Syed.Subhani
+ * @author Subraham
  *
  */
 public class SpringIntegrationTaskClient {
@@ -29,8 +29,6 @@ public class SpringIntegrationTaskClient {
      * context.
      */
     private static String configFile = "springIntegrationTask-applicationContext.xml";
-    
-    
     
     /**
      * private constructor.

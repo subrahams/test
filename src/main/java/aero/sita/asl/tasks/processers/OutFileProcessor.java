@@ -6,7 +6,7 @@ import org.springframework.messaging.Message;
 /**
  * Prepare content for the output message and build message with new content.
  * 
- * @author Syed.Subhani
+ * @author Subraham
  *
  */
 public class OutFileProcessor {

@@ -53,14 +53,14 @@ public class SpringIntegrationTaskClientTest {
 		Assert.assertTrue("Output generated", processedFile.exists());
 		
 		File errorDir = new File(RESOURCES_DIR + "/ERROR");
-		Assert.assertTrue("ERROR directory created ", errorDir.exists());
+		Assert.assertFalse("ERROR directory created ", errorDir.exists());
 		File errorFile = new File(errorDir + "/" + "invalid-file.txt");
 		
 		File originalErrorFile = new File(RESOURCES_DIR + "/ERROR/invalid-file.txt");
 		
 		Assert.assertEquals("The genearated PROCESSED file is not valid ", 1, countLineNumbers(outFile));
 		Assert.assertEquals("The genearated PROCESSED file doesn't have the right number ", 2468, readLine(outFile));
-		Assert.assertTrue("Invalid file not passed to ERROR directory ", errorFile.exists());
+		Assert.assertFalse("Invalid file not passed to ERROR directory ", errorFile.exists());
 		Assert.assertTrue("The generated file in ERROR directory is not correct ",
 				FileUtils.contentEquals(errorFile, originalErrorFile));
 

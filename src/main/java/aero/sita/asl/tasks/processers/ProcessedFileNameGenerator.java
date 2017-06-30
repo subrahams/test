@@ -5,7 +5,7 @@ import org.springframework.messaging.Message;
 
 /**
  * Custom Generator class used to update the name of the file.
- * @author Syed.Subhani
+ * @author Subraham
  *
  */
 public class ProcessedFileNameGenerator implements FileNameGenerator {
